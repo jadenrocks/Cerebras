@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = 'API_KEY'  # I did not get an actual key ever, I tried emailing too
+API_KEY = 'listed_jaden_key'
 API_URL = 'https://api.cerebras.ai/inference'
 
 headers = {
