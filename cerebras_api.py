@@ -2,8 +2,7 @@ import requests
 import os
 
 def fetch_player_data(player_name):
-    """Fetches player data from the Cerebras API."""
-    API_KEY = os.getenv("CEREBRAS_API_KEY")  # Use environment variables for security
+    API_KEY = os.getenv("given_jadenc_key")  
     API_URL = "https://api.cerebras.ai/inference"
 
     headers = {
@@ -25,12 +24,10 @@ def fetch_player_data(player_name):
         print(f"Error fetching data: {e}")
         return None
 
-# New function for multiple players
 def fetch_multiple_players(player_names):
     """Fetches data for multiple players."""
     return [fetch_player_data(player) for player in player_names]
 
-# Updated error handling and retry mechanism
 def fetch_with_retry(player_name, retries=3):
     """Fetches player data with retry logic."""
     for attempt in range(retries):
@@ -41,7 +38,6 @@ def fetch_with_retry(player_name, retries=3):
     return None
 
 
-# Updated devcontainer.json
 {
     "name": "Python 3",
     "features": {
